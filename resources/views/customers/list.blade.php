@@ -6,6 +6,7 @@
             <div class="col-12">
                 <h1>Danh Sách Khách Hàng</h1>
             </div>
+
             <a class="btn btn-outline-primary" href="" data-toggle="modal" data-target="#cityModal">
                 Lọc
             </a>
@@ -64,7 +65,18 @@
                 @endif
                 </tbody>
             </table>
-            <a class="btn btn-primary" href="{{ route('customers.create') }}">Thêm mới</a>
+            <div class="col-12">
+                <div class="row">
+                    <div class="col-6">
+                        <a class="btn btn-primary" href="{{ route('customers.create') }}">Thêm mới</a>
+                    </div>
+                    <div class="col-6">
+                        <div class="pagination float-right">
+                            {{ $customers->appends(request()->query()) }}
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="modal fade" id="cityModal" role="dialog">
             <div class="modal-dialog modal-lg">
