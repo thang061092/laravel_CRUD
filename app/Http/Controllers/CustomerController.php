@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\City;
 use App\Customer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
@@ -11,12 +12,14 @@ class CustomerController extends Controller
     public function index()
     {
         $customers = Customer::all();
-        return view('customers.list', compact('customers'));
+        $cities = City::all();
+        return view('customers.list', compact('customers','cities'));
     }
 
     public function create()
     {
-        return view('customers.create');
+        $cities = City::all();
+        return view('customers.create', compact('cities'));
     }
 
     public function store(Request $request)
@@ -25,25 +28,29 @@ class CustomerController extends Controller
         $customer->name = $request->input('name');
         $customer->email = $request->input('email');
         $customer->dob = $request->input('dob');
+        $customer->city_id = $request->city_id;
         $customer->save();
-        Session::flash('success', 'Tạo mới khách hàng thành công');
+        toastr()->success('Thêm khách hàng thành công');
         return redirect()->route('customers.index');
+
     }
 
     public function edit($id)
     {
         $customer = Customer::findOrFail($id);
-        return view('customers.edit', compact('customer'));
+        $cities = City::all();
+        return view('customers.edit', compact('customer', 'cities'));
     }
 
-    public function update(Request $request,$id)
+    public function update(Request $request, $id)
     {
         $customer = Customer::findOrFail($id);
-        $customer->name     = $request->input('name');
-        $customer->email    = $request->input('email');
-        $customer->dob      = $request->input('dob');
+        $customer->name = $request->input('name');
+        $customer->email = $request->input('email');
+        $customer->dob = $request->input('dob');
+        $customer->city_id = $request->city_id;
         $customer->save();
-        Session::flash('success', 'Cập nhật khách hàng thành công');
+        toastr()->success('Update thành công');
         return redirect()->route('customers.index');
     }
 
@@ -51,7 +58,21 @@ class CustomerController extends Controller
     {
         $customer = Customer::findOrFail($id);
         $customer->delete();
-        Session::flash('success', 'Xóa khách hàng thành công');
+        toastr()->success('Xoá khách hàng thành công');
         return redirect()->route('customers.index');
+    }
+
+    public function filterByCity(Request $request){
+        $idCity = $request->input('city_id');
+
+        //kiem tra city co ton tai khong
+        $cityFilter = City::findOrFail($idCity);
+
+        //lay ra tat ca customer cua cityFiler
+        $customers = Customer::where('city_id', $cityFilter->id)->get();
+        $totalCustomerFilter = count($customers);
+        $cities = City::all();
+
+        return view('customers.list', compact('customers', 'cities', 'totalCustomerFilter', 'cityFilter'));
     }
 }

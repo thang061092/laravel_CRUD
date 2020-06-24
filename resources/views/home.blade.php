@@ -19,10 +19,15 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
             integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
             crossorigin="anonymous"></script>
+    @toastr_css
 </head>
 <body>
 <div class="container">
+    @include('nav')
     @yield('content')
 </div>
 </body>
+    @jquery
+    @toastr_js
+    @toastr_render
 </html>
