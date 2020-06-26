@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\City;
 use App\Customer;
+use App\Http\Requests\ValidateCustomerRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
@@ -22,7 +23,7 @@ class CustomerController extends Controller
         return view('customers.create', compact('cities'));
     }
 
-    public function store(Request $request)
+    public function store(ValidateCustomerRequest $request)
     {
         $customer = new Customer();
         $customer->name = $request->input('name');
@@ -65,9 +66,8 @@ class CustomerController extends Controller
     public function filterByCity(Request $request)
     {
         $idCity = $request->input('city_id');
-        //kiem tra city co ton tai khong
         $cityFilter = City::findOrFail($idCity);
-        $customers = Customer::where('city_id', $cityFilter->id)->get();
+        $customers = Customer::where('city_id', $cityFilter->id)->paginate(5);
         $totalCustomerFilter = count($customers);
         $cities = City::all();
 

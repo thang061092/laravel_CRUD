@@ -14,7 +14,7 @@
                         <input type="text" class="form-control" name="name"  placeholder="Enter name" required>
                     </div>
                     <button type="submit" class="btn btn-primary">Thêm mới</button>
-                    <button class="btn btn-secondary" onclick="window.history.go(-1); return false;">Hủy</button>
+                    <a class="btn btn-secondary" href="{{route('cities.create')}}">Cancel</a>
                 </form>
             </div>
         </div>

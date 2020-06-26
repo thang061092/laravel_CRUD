@@ -21,10 +21,14 @@
   <component name="ChangeListManager">
     <list default="true" id="0e79d35b-4826-4a28-a4ba-7687c52a6e8f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/City.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/City.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CustomerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CustomerController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/cities/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/cities/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/cities/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/cities/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/cities/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/cities/list.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/customers/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/customers/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/customers/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/customers/edit.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/customers/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/customers/list.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/nav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/nav.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -152,7 +156,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RunManager">
@@ -174,7 +178,11 @@
       <workItem from="1592881257234" duration="1371000" />
       <workItem from="1592885110911" duration="8180000" />
       <workItem from="1592961101107" duration="1913000" />
-      <workItem from="1592966254673" duration="8536000" />
+      <workItem from="1592966254673" duration="10544000" />
+      <workItem from="1593011280233" duration="4549000" />
+      <workItem from="1593047797708" duration="1138000" />
+      <workItem from="1593055172190" duration="1079000" />
+      <workItem from="1593071470619" duration="4391000" />
     </task>
     <servers />
   </component>
@@ -194,10 +202,10 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="262" y="287" width="424" height="490" key="FileChooserDialogImpl" timestamp="1592906581701">
+    <state x="262" y="287" width="424" height="490" key="FileChooserDialogImpl" timestamp="1593074040032">
       <screen x="0" y="0" width="1920" height="1046" />
     </state>
-    <state x="262" y="287" width="424" height="490" key="FileChooserDialogImpl/0.0.1920.1046@0.0.1920.1046" timestamp="1592906581701" />
+    <state x="262" y="287" width="424" height="490" key="FileChooserDialogImpl/0.0.1920.1046@0.0.1920.1046" timestamp="1593074040032" />
     <state x="415" y="445" width="399" height="161" key="NewPhpFileDialog" timestamp="1592971437144">
       <screen x="0" y="0" width="1920" height="1046" />
     </state>

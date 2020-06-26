@@ -11,13 +11,6 @@
                 Lọc
             </a>
             <div class="col-12">
-                @if (Session::has('success'))
-                    <p class="text-success">
-                        <i class="fa fa-check" aria-hidden="true"></i>
-                        {{ Session::get('success') }}
-                    </p>
-                @endif
-
                 @if(isset($totalCustomerFilter))
                     <span class="text-muted">
                     {{'Tìm thấy' . ' ' . $totalCustomerFilter . ' '. 'khách hàng:'}}
@@ -55,7 +48,11 @@
                             <td>{{ $customer->name }}</td>
                             <td>{{ $customer->dob }}</td>
                             <td>{{ $customer->email }}</td>
-                            <td>{{ $customer->city->name }}</td>
+                            <td>
+                                @if($customer->city)
+                                    {{ $customer->city->name }}
+                                @endif
+                            </td>
                             <td><a href="{{ route('customers.edit', $customer->id) }}" class="btn btn-primary">sửa</a>
                             </td>
                             <td><a href="{{ route('customers.destroy', $customer->id) }}" class="btn btn-danger"
@@ -72,7 +69,7 @@
                     </div>
                     <div class="col-6">
                         <div class="pagination float-right">
-                            {{ $customers->appends(request()->query()) }}
+                            {{ $customers->appends(request()->query())}}
                         </div>
                     </div>
                 </div>

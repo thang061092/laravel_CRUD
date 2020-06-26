@@ -33,7 +33,7 @@
                         </select>
                     </div>
                     <button type="submit" class="btn btn-primary">Chỉnh sửa</button>
-                    <button class="btn btn-secondary" onclick="window.history.go(-1); return false;">Hủy</button>
+                    <a class="btn btn-secondary" href="{{route('customers.edit')}}">Cancel</a>
                 </form>
             </div>
         </div>

@@ -14,7 +14,7 @@
                         <input type="text" class="form-control" name="name" value="{{ $city->name }}" required>
                     </div>
                     <button type="submit" class="btn btn-primary">Cập nhật</button>
-                    <button class="btn btn-secondary" onclick="window.history.go(-1); return false;">Hủy</button>
+                    <a class="btn btn-secondary" href="{{route('cities.edit')}}">Cancel</a>
                 </form>
             </div>
         </div>
