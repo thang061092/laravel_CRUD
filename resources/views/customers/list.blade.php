@@ -1,14 +1,14 @@
 @extends('home')
-@section('title', 'Danh sách khách hàng')
+@section('title', __('messages.customer_list'))
 @section('content')
     <div class="col-12">
         <div class="row">
             <div class="col-12">
-                <h1>Danh Sách Khách Hàng</h1>
+                <h1>{{__('messages.customer_list')}}</h1>
             </div>
 
             <a class="btn btn-outline-primary" href="" data-toggle="modal" data-target="#cityModal">
-                Lọc
+                {{__('messages.filter')}}
             </a>
             <div class="col-12">
                 @if(isset($totalCustomerFilter))
@@ -28,10 +28,10 @@
                 <thead class="badge-dark">
                 <tr>
                     <th scope="col">#</th>
-                    <th scope="col">Tên khách hàng</th>
-                    <th scope="col">Ngày Sinh</th>
+                    <th scope="col">{{ __('messages.name_customer') }}</th>
+                    <th scope="col">{{ __('messages.birth_day') }}</th>
                     <th scope="col">Email</th>
-                    <th scope="col">Tỉnh Thành</th>
+                    <th scope="col">{{__('messages.city')}}</th>
                     <th></th>
                     <th></th>
                 </tr>
@@ -53,10 +53,10 @@
                                     {{ $customer->city->name }}
                                 @endif
                             </td>
-                            <td><a href="{{ route('customers.edit', $customer->id) }}" class="btn btn-primary">sửa</a>
+                            <td><a href="{{ route('customers.edit', $customer->id) }}" class="btn btn-primary">{{ __('messages.update') }}</a>
                             </td>
                             <td><a href="{{ route('customers.destroy', $customer->id) }}" class="btn btn-danger"
-                                   onclick="return confirm('Bạn chắc chắn muốn xóa?')">xóa</a></td>
+                                   onclick="return confirm('Bạn chắc chắn muốn xóa?')">{{__('messages.delete')}}</a></td>
                         </tr>
                     @endforeach
                 @endif
@@ -65,7 +65,7 @@
             <div class="col-12">
                 <div class="row">
                     <div class="col-6">
-                        <a class="btn btn-primary" href="{{ route('customers.create') }}">Thêm mới</a>
+                        <a class="btn btn-primary" href="{{ route('customers.create') }}">{{__('messages.add_new')}}</a>
                     </div>
                     <div class="col-6">
                         <div class="pagination float-right">
@@ -88,11 +88,10 @@
                             <!--Lọc theo khóa học -->
                             <div class="select-by-program">
                                 <div class="form-group row">
-                                    <label class="col-sm-5 col-form-label border-right">Lọc khách hàng theo tỉnh
-                                        thành</label>
+                                    <label class="col-sm-5 col-form-label border-right">{{__('messages.filter_customers_by_city')}}</label>
                                     <div class="col-sm-7">
                                         <select class="custom-select w-100" name="city_id">
-                                            <option value="">Chọn tỉnh thành</option>
+                                            <option value="">{{__('messages.select')}}</option>
                                             @foreach($cities as $city)
                                                 @if(isset($cityFilter))
                                                     @if($city->id == $cityFilter->id)
@@ -115,8 +114,8 @@
 
                         </div>
                         <div class="modal-footer">
-                            <button type="submit" id="submitAjax" class="btn btn-primary">Chọn</button>
-                            <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Hủy</button>
+                            <button type="submit" id="submitAjax" class="btn btn-primary"> {{__('messages.select')}}</button>
+                            <button type="button" class="btn btn-outline-secondary" data-dismiss="modal"> {{__('messages.cancel')}}</button>
                         </div>
                     </div>
                 </form>

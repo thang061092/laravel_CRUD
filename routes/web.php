@@ -13,26 +13,32 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::group(['middleware' => 'locale'], function () {
 
-Route::group(['prefix' => 'customers'], function () {
-    Route::get('/', 'CustomerController@index')->name('customers.index');
-    Route::get('/create', 'CustomerController@create')->name('customers.create');
-    Route::post('/create', 'CustomerController@store')->name('customers.store');
-    Route::get('/{id}/edit', 'CustomerController@edit')->name('customers.edit');
-    Route::post('/{id}/edit', 'CustomerController@update')->name('customers.update');
-    Route::get('/{id}/destroy', 'CustomerController@destroy')->name('customers.destroy');
-    Route::get('/filter', 'CustomerController@filterByCity')->name('customers.filterByCity');
-    Route::get('/search', 'CustomerController@search')->name('customers.search');
-});
+    Route::get('change-language/{language}', 'LanguageController@changeLanguage')->name('user.change-language');
 
-Route::group(['prefix' => 'cities'], function () {
-    Route::get('/', 'CityController@index')->name('cities.index');
-    Route::get('/create', 'CityController@create')->name('cities.create');
-    Route::post('/create', 'CityController@store')->name('cities.store');
-    Route::get('/{id}/edit', 'CityController@edit')->name('cities.edit');
-    Route::post('/{id}/edit', 'CityController@update')->name('cities.update');
-    Route::get('/{id}/destroy', 'CityController@destroy')->name('cities.delete');
+    Route::get('/', function () {
+        return view('home');
+    });
+
+    Route::group(['prefix' => 'customers'], function () {
+        Route::get('/', 'CustomerController@index')->name('customers.index');
+        Route::get('/create', 'CustomerController@create')->name('customers.create');
+        Route::post('/create', 'CustomerController@store')->name('customers.store');
+        Route::get('/{id}/edit', 'CustomerController@edit')->name('customers.edit');
+        Route::post('/{id}/edit', 'CustomerController@update')->name('customers.update');
+        Route::get('/{id}/destroy', 'CustomerController@destroy')->name('customers.destroy');
+        Route::get('/filter', 'CustomerController@filterByCity')->name('customers.filterByCity');
+        Route::get('/search', 'CustomerController@search')->name('customers.search');
+    });
+
+    Route::group(['prefix' => 'cities'], function () {
+        Route::get('/', 'CityController@index')->name('cities.index');
+        Route::get('/create', 'CityController@create')->name('cities.create');
+        Route::post('/create', 'CityController@store')->name('cities.store');
+        Route::get('/{id}/edit', 'CityController@edit')->name('cities.edit');
+        Route::post('/{id}/edit', 'CityController@update')->name('cities.update');
+        Route::get('/{id}/destroy', 'CityController@destroy')->name('cities.delete');
+    });
+
 });
