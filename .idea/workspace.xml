@@ -20,8 +20,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0e79d35b-4826-4a28-a4ba-7687c52a6e8f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/customer_manager.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/customer_manager.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CityController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_06_23_015019_creat_customer_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_06_23_015019_creat_customer_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_06_24_093835_create_cities_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_06_24_093835_create_cities_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_06_24_094315_add_cities_to_customer_table.php" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -136,6 +142,9 @@
       <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-common" />
       <path value="$PROJECT_DIR$/vendor/phpdocumentor/type-resolver" />
       <path value="$PROJECT_DIR$/vendor/yoeunes/toastr" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/cache" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/dbal" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/event-manager" />
     </include_path>
   </component>
   <component name="ProjectId" id="1dhdS8Y7YysgMRIoW8PsioHUQEQ" />
@@ -180,7 +189,7 @@
       <workItem from="1593577750384" duration="6527000" />
       <workItem from="1593873822680" duration="1248000" />
       <workItem from="1593916037619" duration="2022000" />
-      <workItem from="1594007452955" duration="1019000" />
+      <workItem from="1594007452955" duration="5045000" />
     </task>
     <servers />
   </component>
