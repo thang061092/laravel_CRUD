@@ -45,7 +45,7 @@ class CityController extends Controller
     public function destroy($id)
     {
         $city = City::findOrFail($id);
-        $city->customer()->delete();
+        $city->customers()->delete();
         $city->delete();
         toastr()->success('Xoá thành công');
         return redirect()->route('cities.index');
